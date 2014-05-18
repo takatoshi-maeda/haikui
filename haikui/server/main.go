@@ -12,6 +12,7 @@ func Start() {
 func New() *http.Server {
 	mux := http.NewServeMux()
 	registerHandler(mux, "/stats", StatsHandler())
+	registerHandler(mux, "/images", ImageHandler())
 
 	httpServer := &http.Server{
 		Addr:         "localhost:8989",
